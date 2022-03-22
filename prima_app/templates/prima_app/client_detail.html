@@ -1,0 +1,34 @@
+{% extends 'prima_app/main.html'%}
+{% block content %}
+ <h1>les details du client Numéro: {{client.id}}</h1>
+ 
+ <div class="lient">
+    <a href="{% url 'clients' %}">Retour</a>
+    <a href="{% url 'client-update' client.id %}">Modifier</a>
+    <a href="{% url 'client-delete' client.id %}">Supprimer</a>
+</div>
+
+ <hr>
+<p>Nom et Prenom: <strong>{{client.nom_prenom}}</strong></p>
+<hr>
+<p>Sexe: <strong>{{client.sexe}}</strong></p>
+<hr>
+<p>Telephone: <strong>{{client.telephone}}</strong></p>
+<hr>
+<p>Age: <strong>{{client.age}}</strong></p>
+<hr>
+<p>Date de consultation: <strong>{{client.date}}</strong></p>
+<hr>
+<p>Genre d'imagerie: <strong>{{client.categorie_imagerie}}</strong></p>
+<hr>
+<p>Le prix d'image: <strong>{{client.prix}}</strong></p>
+
+<hr>
+<div>
+    <h4>Resultat du Docteur:  {{client.medecin}}</h4>
+    <p> le Resultat du {{client.categorie_imagerie}} est le suivants:<br>{{client.decription_res}}</p>
+</div>
+<hr>
+<h2>passez une bonne journée {{client.user}}</h2>
+        
+{% endblock%}

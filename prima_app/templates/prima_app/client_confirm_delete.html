@@ -1,0 +1,10 @@
+{% extends 'prima_app/main.html'%}
+{% block content %}
+
+<a href="{% url 'clients' %}">Retour</a>
+<form  method="POST" action="">
+    {% csrf_token %}
+    <p>Vous-étes sur de vouloir <strong>effacer</strong> cet élement ? {{client}}</p>
+    <input type="submit" value="Effacer">
+</form>
+{% endblock %}

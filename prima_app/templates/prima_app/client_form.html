@@ -1,0 +1,13 @@
+{% extends 'prima_app/main.html'%}
+{% block content %}
+
+<h2>formulaire de client</h2>
+
+<a href="{% url 'clients' %}">Retour</a>
+<hr>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Enregister">
+</form>
+{% endblock %}
